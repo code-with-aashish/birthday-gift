@@ -1,0 +1,86 @@
+/* ===== GALLERY BODY ===== */
+.gallery-body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f3f3f3;
+    text-align: center;
+    perspective: 1500px;
+    overflow-x: hidden;
+}
+
+/* Heading */
+.gallery-body h1 {
+    margin-top: 40px;
+    font-size: 30px;
+    color: #222;
+}
+
+/* Scene */
+.scene {
+    width: 100%;
+    height: 400px;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 3D Carousel */
+.carousel {
+    position: relative;
+    width: 260px;
+    height: 320px;
+    transform-style: preserve-3d;
+    animation: spin 30s linear infinite;
+}
+
+/* Each panel */
+.carousel span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+/* 360 / 8 = 45deg */
+.carousel span:nth-child(1) { transform: rotateY(0deg) translateZ(420px); }
+.carousel span:nth-child(2) { transform: rotateY(45deg) translateZ(420px); }
+.carousel span:nth-child(3) { transform: rotateY(90deg) translateZ(420px); }
+.carousel span:nth-child(4) { transform: rotateY(135deg) translateZ(420px); }
+.carousel span:nth-child(5) { transform: rotateY(180deg) translateZ(420px); }
+.carousel span:nth-child(6) { transform: rotateY(225deg) translateZ(420px); }
+.carousel span:nth-child(7) { transform: rotateY(270deg) translateZ(420px); }
+.carousel span:nth-child(8) { transform: rotateY(315deg) translateZ(420px); }
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+    transition: 0.5s;
+}
+
+/* Hover zoom */
+.carousel img:hover {
+    transform: scale(1.05);
+}
+
+/* Rotation */
+@keyframes spin {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+/* Stop on hover */
+.carousel:hover {
+    animation-play-state: paused;
+}
+
+/* Bottom text */
+.gallery-body p {
+    width: 70%;
+    margin: 50px auto;
+    font-size: 18px;
+    color: #444;
+}
